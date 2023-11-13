@@ -4,6 +4,7 @@
 #include "signal.h"
 
 #include <array>
+#include <filesystem>
 #include <memory>
 #include <stdint.h>
 #include <string>
@@ -62,8 +63,9 @@ public:
   // <width, height>
   Signal<int32_t, int32_t> framebufferResizeEvent;
   Signal<KeyEvent> keyEvent;
+  // <x, y>
   Signal<float, float> cursorMoveEvent;
-
+  Signal<const std::vector<std::filesystem::path> &> dropEvent;
 private:
   void connectEventHandlers();
 

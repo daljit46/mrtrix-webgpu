@@ -366,6 +366,11 @@ void Window::connectEventHandlers() {
     auto *self = static_cast<Window *>(glfwGetWindowUserPointer(window));
     self->cursorMoveEvent.emit(static_cast<float>(xPos), static_cast<float>(yPos));
   });
+  glfwSetDropCallback(m_window.get(), [](GLFWwindow *window, int count, const char **paths) {
+    auto *self = static_cast<Window *>(glfwGetWindowUserPointer(window));
+    std::vector<std::filesystem::path> pathsVec(paths, paths + count);
+    self->dropEvent.emit(pathsVec);
+  });
 }
 
 } // namespace MR::GUI2

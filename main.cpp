@@ -28,6 +28,13 @@ int main() {
     }
   });
 
+  window.dropEvent.connect([](const std::vector<std::filesystem::path> &paths) {
+    std::cout << "1. Dropped " << paths.size() << " files:" << std::endl;
+    for (const auto &path : paths) {
+      std::cout << "  " << path << std::endl;
+    }
+  });
+
   WGPUContext context = MR::createWgpuContext();
   GUI2::Renderer renderer(&context, &window);
 
