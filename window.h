@@ -3,11 +3,11 @@
 #include "inputenums.h"
 #include "signal.h"
 
+#include <array>
 #include <memory>
 #include <stdint.h>
 #include <string>
 #include <string_view>
-#include <tuple>
 #include <type_traits>
 
 namespace wgpu {
@@ -42,16 +42,16 @@ public:
   void setTitle(const std::string &title);
 
   // The size the window in *screen coordinates*.
-  std::tuple<int32_t, int32_t> size() const;
+  std::array<int32_t, 2> size() const;
 
   // The size of the framebuffer in *pixels*.
-  std::tuple<int32_t, int32_t> framebufferSize() const;
+  std::array<int32_t, 2> framebufferSize() const;
 
   // The ratio between the current DPI and the platform's default DPI.
-  std::tuple<float, float> contentScale() const;
+  std::array<float, 2> contentScale() const;
 
   // The position of the cursor in *screen coordinates* measured from the top-left corner of the window.
-  std::tuple<float, float> cursorPosition() const;
+  std::array<float, 2> cursorPosition() const;
 
   [[nodiscard]] wgpu::Surface createWGPUSurface(const wgpu::Instance &instance) const;
 

@@ -310,28 +310,28 @@ void Window::setTitle(const std::string &title) {
   m_title = title;
 }
 
-std::tuple<int32_t, int32_t> Window::size() const {
+std::array<int32_t, 2> Window::size() const {
   int32_t width = 0;
   int32_t height = 0;
   glfwGetWindowSize(m_window.get(), &width, &height);
   return {width, height};
 }
 
-std::tuple<int32_t, int32_t> Window::framebufferSize() const {
+std::array<int32_t, 2> Window::framebufferSize() const {
   int32_t width = 0;
   int32_t height = 0;
   glfwGetFramebufferSize(m_window.get(), &width, &height);
   return {width, height};
 }
 
-std::tuple<float, float> Window::contentScale() const {
+std::array<float, 2> Window::contentScale() const {
   float xScale = 1.0f;
   float yScale = 1.0f;
   glfwGetWindowContentScale(m_window.get(), &xScale, &yScale);
   return {xScale, yScale};
 }
 
-std::tuple<float, float> Window::cursorPosition() const {
+std::array<float, 2> Window::cursorPosition() const {
   double xPos = 0.0;
   double yPos = 0.0;
   glfwGetCursorPos(m_window.get(), &xPos, &yPos);

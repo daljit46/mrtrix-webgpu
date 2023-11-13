@@ -48,7 +48,6 @@ set(TINT_BUILD_AS_OTHER_OS OFF)
 set(TINT_BUILD_REMOTE_COMPILE OFF)
 
 add_subdirectory(dawn EXCLUDE_FROM_ALL)
-add_subdirectory(glfw3webgpu)
 
 add_executable(mrview 
     main.cpp 
@@ -65,7 +64,6 @@ target_link_libraries(mrgui PUBLIC
     webgpu_dawn
     webgpu_cpp
     webgpu_glfw
-    glfw3webgpu
     Threads::Threads
 )
 

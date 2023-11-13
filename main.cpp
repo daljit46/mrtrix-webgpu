@@ -19,7 +19,7 @@ int main() {
   std::mt19937 gen(rd());
   std::uniform_real_distribution<float> dis(0.0f, 1.0f);
   window.keyEvent.connect([&clearColor, &dis, &gen](GUI2::KeyEvent event) {
-    if (event.keyCode == GUI2::KeyCode::Space) {
+    if (event.keyCode == GUI2::KeyCode::Space && event.action == GUI2::KeyAction::Press) {
       // Change clear color randomly
       clearColor[0] = dis(gen);
       clearColor[1] = dis(gen);
