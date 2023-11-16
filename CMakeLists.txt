@@ -53,7 +53,8 @@ add_executable(mrview
     main.cpp 
 )
 
-add_library(mrgui STATIC     
+add_library(mrgui STATIC
+    inputenums.h
     signal.h
     renderer.h renderer.cpp
     window.cpp window.h

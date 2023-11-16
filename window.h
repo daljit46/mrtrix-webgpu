@@ -6,7 +6,7 @@
 #include <array>
 #include <filesystem>
 #include <memory>
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 #include <string_view>
 #include <type_traits>
