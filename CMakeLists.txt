@@ -68,6 +68,13 @@ target_link_libraries(mrgui PUBLIC
     Threads::Threads
 )
 
+# TODO: why is this needed to link on Linux???
+target_link_libraries(mrview PUBLIC
+    webgpu_dawn
+    webgpu_cpp
+    webgpu_glfw
+)
+
 target_link_libraries(mrview PRIVATE
     mrgui
 )
