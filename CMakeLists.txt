@@ -70,3 +70,7 @@ target_link_libraries(mrgui PUBLIC
 target_link_libraries(mrview PRIVATE
     mrgui
 )
+
+add_custom_target(Github SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/.github/workflows/build.yml
+)
