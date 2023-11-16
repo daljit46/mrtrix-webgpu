@@ -291,6 +291,11 @@ Window::Window(std::string_view title, int32_t width, int32_t height) : m_title(
   connectEventHandlers();
 }
 
+void* Window::nativeHandle() const
+{
+  return m_window.get();
+}
+
 // Note that we need the destructor to be defined in the .cpp file
 // since we're using a unique_ptr with an incomplete type.
 Window::~Window() = default;

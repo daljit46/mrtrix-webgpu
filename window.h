@@ -37,6 +37,8 @@ public:
   Window(Window &&) = delete;
   Window &operator=(Window &&) = delete;
 
+  void* nativeHandle() const;
+
   [[nodiscard]] bool shouldClose() const;
 
   std::string title() const;
